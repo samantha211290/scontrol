@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es_MX">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #C4C4C4;
+   color: white;
+   text-align: center;
+}
+</style>
+    <title>Senior Control</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #C4C4C4;">
+        <a class="navbar-brand" href="#">Senior Control</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link disabled" href="#"> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-2">
+               <table>
+                        <tbody>
+                            <tr>
+                                <td><label for="email">Correo electrónico</label></td>
+                                <td><input type="email" class="form-control mx-2" id="email" name="email"></td>
+                                <td class="html7magic"><label for="pass">Contraseña</label></td>
+                                <td><input type="password" class="form-control mx-2" name="pass" id="pass" ></td>
+                                <td><button type="submit" class="btn btn-warning mx-2">Iniciar Sesión</button></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                   <a href="#" class="mx-3">¿Olvidaste tu contraseña?</a>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            
+            </form>
+        </div>
+    </nav>
+    
+<div class="container">
+    <div class="row">
+  <div class="col-md-6">
+        <div class="bienvenida">
+            <br>
+            <h4 class="my-3">Bienvenido a Senior Control</h4>
+            <br>
+            <h4>Senior Control te ayudará a gestionar tus actividades fiscales en un segundo.</h4>
+            <br>
+            <img src="images/circulo.png" alt="SC" width="100" height="100" class="mx-3">
+              <img src="images/circulo.png" alt="SC" width="100" height="100" class="mx-3">
+                <img src="images/circulo.png" alt="SC" width="100" height="100" class="mx-3">
+            
+           
+        </div></div>
+  <div class="col-md-6">
+      <div class="cuenta">
+           <br>
+            <h4 class="my-3">Crear una cuenta con Senior Control</h4>
+
+               <form method="POST" action="usuario">
+                  {{ csrf_field() }}
+                   <div class="form-group">
+                       <input type="text" class="@error('nombre') is-invalid @enderror form-control" id="nombre" name="nombre" placeholder="Nombre">  
+                        @error('nombre')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror  
+                   </div>
+                    <div class="form-group">
+                      <input type="text" class="@error('nombre') is-invalid @enderror form-control" id="apellido" name="apellido" placeholder="Apellido"  >
+                        @error('apellido')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror     
+                   </div>
+                     <div class="form-group">
+                      <input type="text" class="@error('nombre') is-invalid @enderror form-control" id="correo" name="correo" placeholder="Correo Electrónico"  >
+                       @error('correo')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                   </div>
+                    
+                     <div class="form-group">
+                      <input type="text" class="@error('nombre') is-invalid @enderror form-control" id="pass" name="pass" placeholder="Contraseña">
+                       @error('pass')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                   </div>
+                     <div class="form-group">
+                      <input type="text" class="form-control" id="telefono" name="telefono"  placeholder="Teléfono">
+                   </div>
+                     <div class="form-check form-check-inline ">
+                       <input class="@error('nombre') is-invalid @enderror form-check-input" type="radio" id="tipo" name="tipo" value="1">
+                       <label class="form-check-label mx-3" for="inlineCheckbox1">Despacho</label>
+                   </div>
+                   <div class="form-check form-check-inline">
+                       <input class="@error('nombre') is-invalid @enderror form-check-input" type="radio" id="tipo" name="tipo" value="2">
+                       <label class="form-check-label  mx-3" for="inlineCheckbox2">Independiente</label>
+                   </div>
+                    @error('tipo')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    <div class="form-group my-3">
+                        <button type="submit" class="btn btn-warning mx-2">Crear Cuenta</button>
+                   </div>
+               </form>
+           
+            <small>Al crear una cuenta, estas de acuerdo con nuestra <a href="">Política de privacidad</a> y <a href="">Términos del Servicio</a></small>
+        </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

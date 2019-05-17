@@ -1,0 +1,52 @@
+body{
+    padding: 0;
+    margin: 0;
+    font: 15px Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    
+}
+
+
+/*Generales*/
+
+.contenedor{
+    width: 80%;
+    margin: auto;
+    /*display: block;*/
+    
+    overflow: hidden;
+}
+
+.boton1{
+    height: 23px;
+    background: #FCB90D;
+    border:0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:#f7f6f6;
+}
+
+/*encabezado*/
+header{
+    background-color: #C4C4C4;
+    color:#000;
+    padding-top: 30px;
+    min-height:70px;
+}
+
+header a{
+    color:red;
+    padding-left: 57%;
+    height: 60px;
+    position: absolute;
+    
+}
+
+header #marca{
+    float:left;
+    
+}
+header #login1{
+    float: right;
+    
+}
